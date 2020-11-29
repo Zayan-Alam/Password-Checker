@@ -15,7 +15,7 @@ public class PasswordCheck {
 		 * 
 		 * 
 		 */
-		System.out.println("This program checks to see if you have a good password or not.");
+		System.out.println("Please type a password. We will tell you if you have a secure password or not.");
 		boolean repeate= true;
 		
 		while (repeate) {
@@ -25,17 +25,17 @@ public class PasswordCheck {
 		
 		String userPassword = myObj.nextLine();
 		
-		System.out.println(userPassword + " is your password right?");
+		System.out.println(userPassword + " is your password right?(Yes/No)");
 		
 		myObj = new Scanner(System.in);
 		String verifiy = myObj.nextLine();
 		if (verifiy.equalsIgnoreCase("yes")) {
-			System.out.println("Ok checking right now!");
+			System.out.println("Ok - checking right now!");
 			repeate=false;
 			
 		}
 		else {
-			System.out.println("Enter password again.");
+			System.out.println("Please enter your password again.");
 			
 		}
 		boolean foundSpecialChar = false;
@@ -52,10 +52,10 @@ public class PasswordCheck {
 			foundSpecialChar = true;
 		
 		else {
-			System.out.println("This password must have a special character @,#,!,_,$,%,^,&,*");
+			System.out.println("This password must have atleast one special character @,#,!,_,$,%,^,&,*");
 		}
 		try {
-			TimeUnit.SECONDS.sleep(2);
+			TimeUnit.SECONDS.sleep(1);
 		} catch (InterruptedException e) {
 			
 			e.printStackTrace();
@@ -73,7 +73,7 @@ public class PasswordCheck {
 		    
 		}
 		if (!foundALetter) {
-		System.out.println("This password needs letters.");
+		System.out.println("This password must have atleast one letter. (a-z).");
 			}
 		
 		boolean foundANumber= false;
@@ -95,20 +95,20 @@ public class PasswordCheck {
 		}
 		
 		if (!userpasswordlength) {
-			System.out.println("This password needs to be 8 digits long.");
+			System.out.println("This password needs to be 8 characters long.");
 		}
 		
 		
-		if (!foundANumber)
-		{
-			System.out.println("This password needs number.");
+		if (!foundANumber) {
+			System.out.println("This password must have atleast one number. (0-9)");
 		}
 		
 		if (foundANumber && foundALetter && foundSpecialChar && userpasswordlength) {
 			System.out.println("This is a good password!");
 		}
-		//System.out.println(userPassword.length());
+		
 		}
 	}
 
 }
+
